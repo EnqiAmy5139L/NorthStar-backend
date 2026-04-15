@@ -15,7 +15,7 @@ app.post('/api/evaluate', async (req, res) => {
         const promptText = req.body.prompt;
         if (!promptText) return res.status(400).json({ error: "No prompt provided" });
 
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
         const result = await model.generateContent(promptText);
         const response = await result.response;
         
